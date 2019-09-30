@@ -1,8 +1,9 @@
 function isEqual(obj1, obj2) {
-  // write your function here
-  // run your tests by running `jest isEqual`
-  // you can also run tests on every save by running
-  // `jest --watch isEqual`
+  if (obj1 === obj2){
+    return true;
+  } else{
+    return false;
+  }
 }
 
 module.exports = { isEqual };
