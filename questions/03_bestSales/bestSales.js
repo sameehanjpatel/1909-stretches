@@ -26,6 +26,26 @@ productWhichMadeMostMoney returns an object with an id for that product and a to
 
 //write the productWhichMadeMostMoney function
 
-function bestSales(sales) {}
+function bestSales(sales) {
+  let greatestSale = sales[0]["amount"]
+  let greatestId;
+  let totalSale;
+  for(i=0; i<sales.length; i++){
+    if(sales[i]["amount"]> greatestSale){
+      greatestSale =  sales[i]["amount"];
+      greatestId = sales[i]["productId"];
+    }
+  }
+  for(j = 0; j < sales.length; j++) {
+    if(sales[i]["productId"] === greatestId){
+      totalSale += sales[i]["amount"];
+    }
+  }
+
+ return greatestId[totalSale];
+}
+
+
+
 
 module.exports = { bestSales, sales };
