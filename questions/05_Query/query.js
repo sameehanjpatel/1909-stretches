@@ -48,7 +48,7 @@ function query(arr, obj) {
   let returnArr = [];
   arr.forEach(item => {
     for(let key in item){
-      if (item[key] === item[key]){
+      if (item[key] === items[key]){
         returnArr.push(item)
       }
     }
@@ -57,3 +57,23 @@ function query(arr, obj) {
 }
 
 module.exports = { query, items };
+
+
+//solution
+const query = (arr, obj) => {
+  const filterEntries = Object.entries(obj);
+  return arr.filter(
+    e => { return Object.keys(e).every((filterArr) => {
+      const key = filterArr[0];
+      const val = filterArr[1];
+      return e[key] === val
+    }) }
+  )
+
+}
+
+
+
+
+
+
