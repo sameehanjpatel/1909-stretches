@@ -18,3 +18,13 @@ const checkAnagrams = (str1, str2) => {
 };
 
 module.exports = { checkAnagrams };
+
+//refactoring
+return str1.split("").forEach((letter, i) =>{
+  if (str1[i]=== str2[i]){
+    continue;
+  } else {
+    return false
+  }
+
+}, true)
