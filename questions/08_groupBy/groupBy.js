@@ -1,11 +1,11 @@
-function groupBy(arr, attr) {
+function groupBy(arr, attr {
 let returnObj = {}
  arr.forEach(i => {
      let currentVal = attr(i);
      if (returnObj[currentVal]){
          returnObj[currentVal].push
     (i) } else{
-         return returnObj[currentVal] =  [i]
+          returnObj[currentVal] =  [i]
      }
 
  })
