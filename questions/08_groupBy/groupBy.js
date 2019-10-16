@@ -3,9 +3,9 @@ let returnObj = {}
  arr.forEach(i => {
      let currentVal = attr(i);
      if (returnObj[currentVal]){
-         continue;
-     } else{
-         return returnObj[currentVal] += i
+         returnObj[currentVal].push
+    (i) } else{
+         return returnObj[currentVal] =  [i]
      }
 
  })
