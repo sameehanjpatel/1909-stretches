@@ -39,3 +39,4 @@ describe('Trim', () => {
     expect(trimmed).toEqual(result);
   });
 });
+

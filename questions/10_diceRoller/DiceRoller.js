@@ -4,17 +4,29 @@
 
 class DiceRoller {
   constructor(sides, numDice){
+  if(!sides || !numDice){
+    throw new Error('Error, missing parameter');
+  };
+  if(typeOf sides !== 'number' || typeOf numDice !== 'number'){
+      throw new Error('Error, missing parameter');
+    }
+  if (typeOf sides !== 'number' || typeOf numDice !== 'number') {
+      throw new Error('Error, missing parameter');
+    }
   this.sides = sides;
   this.numDice = numDice;
-  rollHistory  = [];
+  this.history = [];
   }
 
 
   roll(){
-  let tot
-  let randoNum = Math.floor(Math.random() * this.sides)* this.numDice
-  this.rollHistory.push(randoNum)
-  return randoNum
+  const allRolls = [];
+  for(const _ of Array(this.numDice)){
+    let randoNum = Math.floor(Math.random() * this.sides) + 1
+    allRolls.push(randoNum);
+  }
+    this.history.push(allRolls);
+    return allRolls
   }
 
 }
