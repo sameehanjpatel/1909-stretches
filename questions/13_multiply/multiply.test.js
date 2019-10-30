@@ -11,17 +11,19 @@ describe('multiply testing', () => {
 
   test('it returns the product of two numbers', () => {
     // test the type of the returned value
-    expect(2,3).toBe(6);
+    expect(multiply(2,3)).toBe(6);
 
     // test that the returned value is correct
-    expect(3,4).toBe(12);
+    expect(multiply(3,4)).toBe(12);
 
     // test some other values
-    expect(5,10).toBe(50);
+    expect(multiply(5,10)).toBe(50);
   });
 
   test('it is not hardcoded (hint: use random numbers)', () => {
     // test some random values
-    
+    const num1 = //random num
+    const num2 = //random num
+ expect.(multiply(num1, num2)).toBe(2);
   });
 });

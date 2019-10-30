@@ -7,15 +7,17 @@
 //  456
 
 const floydsTriangle = n => {
-let retStr = " ";
-for(let i = 1; i < n; i++){
-    for(let j = i; j < n; j++){
-        retStr += j.toString();
+const result = [];
+let curNum = 1;
+for(let i = 0; i < n; i++){
+    const currentRow = []
+    for(let j = 0; j <= i; j++){
+        currentRow.push(curNum);
+        curNum++;
     }
-    retStr += "/n";
+    result.push(currentRow.join{""});
 }
-console.log(retStr)
-return retStr;
+return result.join("/n");
 
 };
 
