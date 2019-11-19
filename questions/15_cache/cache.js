@@ -1,16 +1,16 @@
-function cache(fnc) {
+function cache(cb) {
     if (typeof  fnc !== "function" ){
-        throw "Input must be a function."}
+        throw new Error( "Input must be a function.")}
+    const memo = {}
 
-//you need closure to solve this 
-
-// const funcObj(...arg) = { 
-//         return fnc(...arg)
-// }
-
-
-
-    return () =>  { }
+    return function (...num) {
+        if(memo[num] !== undefined){
+            return [memo[num]]
+        } else { 
+            memo[num] = cb(...num);
+            return memo[num];
+        }
+    }
 }
 
 module.exports = { cache };
