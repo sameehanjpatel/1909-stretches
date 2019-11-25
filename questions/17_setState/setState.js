@@ -5,14 +5,16 @@
 class StatefulThing {
   constructor(initialState = {}) {
     this.state = initialState;
+    this.prevsStates  = []
   }
-  setState(props) {
-    return this.state = props
-  
+  setState(incomingState) {
+    this.prevsStates.push(this.state)
+    this.state = {...this.state, ...incomingState };
+    return this.state
   }
-  
-  goBack(){
 
+  goBack(){
+    this.state = this.prevsStates.pop()
   }
 }
 
