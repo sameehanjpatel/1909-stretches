@@ -10,14 +10,18 @@
 */
 
 
-    const next = () => {
-        let i = 0
-        return (
-            console.log(arr[i])
-        i++
-    )
-
+Array.prototype.next = function () {
+    if(!this.nextIdx){
+        this.nextIdx = 0;
     }
+    console.log(this[this.nextIdx]);
+    this.nextIdx += 1;
+
+    if(this.nextIdx  >= this.length){
+        this.nextIdx = 0;
+    }
+    return this
+}
 
 
 // hint: you are adding functionality directly to the
