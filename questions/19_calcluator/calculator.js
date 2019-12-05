@@ -2,28 +2,34 @@ class Calculator {
     constructor(){    
     this.value = 0
     }
-
 }
 
 Calculator.prototype.add =  function (newVal) {
- return this.value += newVal
+  this.value += newVal
+  return this
 }
 
 Calculator.prototype.subtract = function (newVal) {
-    return this.value -= newVal
+    this.value -= newVal
+    return this
 }
 
 Calculator.prototype.divide = function (newVal) {
-    return this.value /= newVal
+    if(newVal !== 0){
+     this.value /= newVal
+     return this
+    }
 }
 
 Calculator.prototype.multiply = function (newVal) {
-    return this.value *= newVal
+     this.value *= newVal
+     return this
 }
 
 
 Calculator.prototype.clear = function () {
-    return this.value= 0
+     this.value= 0
+     return this
 }
 
 module.exports = { Calculator };
